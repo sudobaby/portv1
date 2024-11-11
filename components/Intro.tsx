@@ -1,28 +1,31 @@
-// In "@/components/Intro.tsx"
-import BlurFade from "@/components/ui/blur-fade";  // Ensure this path is correct
+import BlurFade from "@/components/ui/blur-fade";
+import Image from "next/image";
 
 const Intro = () => {
   return (
-    <div className="flex gap-15">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center gap-4">
+      {/* Container for text and GIF */}
+      <div className="flex items-center justify-center gap-2">
+        {/* Text and GIF aligned inline */}
         <BlurFade className="text-2xl font-bold text-white blur-fade">
           Hi! Sudo Baby Here!
         </BlurFade>
-        <p className="text-base text-white-700 font-sans lowercase">
-          Seasoned Fullstack Engineer with 4+ years in startups. I excel in building
-          applications from scratch to production-ready. My expertise spans across
-          frontend, backend, and full-stack development, with a knack for system design
-          and scalability.
-        </p>
+        <Image
+          src="/images/danceanime.gif"
+          alt="Dancing Anime"
+          width={64} // Adjust size for better fit
+          height={64} // Adjust size for better fit
+          className="rounded-full"
+        />
       </div>
-      <div>
-        {/* <Image
-          src="/images/profile.jpg"
-          alt="Sudo Baby"
-          width={300}
-          height={300}
-        /> */}
-      </div>
+
+      {/* Paragraph Section */}
+      <p className="text-center text-base text-white-700 font-sans lowercase max-w-lg">
+        Seasoned Fullstack Engineer with 4+ years in startups. I excel in building
+        applications from scratch to production-ready. My expertise spans across
+        frontend, backend, and full-stack development, with a knack for system design
+        and scalability.
+      </p>
     </div>
   );
 };
